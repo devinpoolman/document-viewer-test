@@ -1,0 +1,21 @@
+<ace-toolbar>
+    <div class="left animated fadeInLeft">
+        <a ng-click="toggleLeftPanelSlider()" class="tap-icon">
+            <i class="icon-reorder icon-light icon-large"></i>
+        </a>
+    </div>
+    <div>{{config.app.displayName}}</div>
+    <div class="right animated fadeInRight">
+        <a ng-click="toggleRightPanelSlider()" class="tap-icon">
+            <i class="icon-info icon-light icon-large"></i>
+        </a>
+    </div>
+</ace-toolbar>
+<div class="main-container">
+  <div class="inner">
+    <p>Documents</p>
+    <ul>
+        <li ng-repeat="document in documents"><a ng-click="open(document.file)">{{document.name}}</a></li>
+    </ul>
+  </div>
+</div>

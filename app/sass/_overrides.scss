@@ -1,0 +1,34 @@
+// App variables
+$primaryColor: #dd0077;
+$secondaryColor: #f2a602; 
+$backgroundColor: #fafafa;
+
+$grayDark: #333;
+
+$btnPrimaryBackground: $primaryColor;
+$btnPrimaryBackgroundHighlight: $primaryColor;
+
+$headingsColor: $primaryColor;
+
+$textColor:	$grayDark;
+$invertedTextColor: #fafafa;
+
+$linkColor: $primaryColor;
+$linkColorHover: $primaryColor;
+
+$sansFontFamily: 'Open Sans',Helvetica;
+$baseFontFamily: $sansFontFamily;
+$headingsFontWeight: normal;
+
+// Set navbar values
+$navbarBackgroundHighlight:       $secondaryColor;
+$navbarBackground:                $secondaryColor;
+$navbarBorder:                    $grayDark;
+$navbarHeight:					  44px;
+$navbarBrandColor:				  white;
+$navbarLinkColor:				  white;
+
+// Set border radius amounts
+$baseBorderRadius:      0px;
+$borderRadiusLarge:     2px;
+$borderRadiusSmall:     0px;

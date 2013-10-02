@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="phonegap.js"></script>
+    <script src="cordova.js"></script>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="css/app.css"/>
+    <title>{{config.app.displayName}}</title>
+  </head>
+  <body ng-controller="MainCtrl">
+    <ace-slide-panels>
+      <div id="left-panel" class="slide-panel" ng-cloak>
+        <div class="menu-title-container">
+          <div class="title">{{config.template.leftPanel.leftPanelTitle}}</div>
+        </div>
+      </div>
+        <div ng-view id="main-panel" class="partial-container" ng-class="animationDirection" ng-animate="{enter: 'animated slideInRight', leave: 'animated slideOutLeft'}"></div>
+        <div id="right-panel" class="slide-panel" ng-cloak>
+            <div class="menu-title-container">
+              <div class="title">{{config.template.rightPanel.rightPanelTitle}}</div>
+            </div>
+        </div>
+    </ace-slide-panels>
+
+    <!-- build:js scripts/main.js -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/persistencejs/lib/persistence.js"></script>
+    <script src="bower_components/persistencejs/lib/persistence.store.sql.js"></script>
+    <script src="bower_components/persistencejs/lib/persistence.store.websql.js"></script>
+    <script src="bower_components/appglu-iscroll/build/iscroll.js"></script>
+    <script src="bower_components/appglu-jssdk/sdk/AppGlu-all.js"></script>
+    <script src="bower_components/appglu-angular/appglu-angular.js"></script>
+    <script src="bower_components/node-uuid/uuid.js"></script>
+    <script src="common/lib/webtoolkit.base64.js"></script>
+    <script src="common/lib/webtoolkit.md5.js"></script>
+    <script src="common/app/main.js"></script>
+    <script src="config.js"></script>
+    <script src="common/services/Repository.js"></script>
+    <script src="common/controller/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/modules.js -->
+    <script src="pages/home/home.js"></script>
+    <script src="bower_components/ace-toolbar/aceToolbar.js"></script>
+    <script src="bower_components/ace-slide-panels/aceSlidePanels.js"></script>
+    <script src="repositories/documents.js"></script>
+    <!-- endbuild -->
+    
+    <script>
+        function initializeAngular() {
+            angular.element(document).ready(function() {
+                angular.bootstrap(document, ['doctestApp']);
+            });
+        }
+
+        AppGlu.isCordovaEnvironment() ? document.addEventListener('deviceready', initializeAngular) : initializeAngular();
+    </script>
+
+  </body>
+</html>

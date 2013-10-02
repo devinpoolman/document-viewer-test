@@ -1,0 +1,162 @@
+@import "overrides";
+@import "../common/sass/variables";
+@import "../bower_components/sass-bootstrap/lib/bootstrap";
+@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../common/sass/animate";
+@import "../common/sass/core";
+@import "../bower_components/ace-*/*.scss";  // This requires sass-globbing; `sudo gem install sass-globbing`
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../resources/fonts/OpenSans.woff) format('woff');
+}
+
+body {
+	font-family: $sansFontFamily;
+	background-color:$backgroundColor;
+}
+
+.partial-container {
+  position:relative;
+  height:100%;
+}
+
+.main-container {
+	position:absolute;
+	top: $navbarHeight;
+	bottom:0px;
+	width:100%;
+	background-color:$backgroundColor;
+	overflow:auto;
+}
+.ios-fullscreen .main-container {
+	top: $navbarHeight + $iosStatusBarHeight;
+}
+
+.inner {
+	margin-left:$innerSideMargin;
+	margin-right:$innerSideMargin;
+}
+
+@mixin respond-to($media) {
+     // Phone
+     @if $media == phone {
+          @media (max-width: 480px) { @content; }
+     }
+     // Tablet Portrait
+     @if $media == tablet-portrait {
+          @media (max-width: 767px) { @content; }
+     }
+     // Tablet Landscape - Desktop
+     @if $media == tablet-landscape-desktop {
+          @media (min-width: 768px) and (max-width: 979px) { @content; }
+     }
+     // Large Desktop
+     @if $media == large-desktop {
+          @media (min-width: 1200px) { @content; }
+     }
+     // Non-Retina
+     @if $media == non-retina {
+          @media screen and (-webkit-max-device-pixel-ratio: 1) { @content; }
+     }
+     // Retina Only
+     @if $media == retina {
+          @media screen and (-webkit-min-device-pixel-ratio: 2) { @content; }
+     }
+     @if $media == non-retina-phone {
+          @media screen and (max-width: 480px) and (-webkit-max-device-pixel-ratio: 1) { @content; }
+     }
+}
+
+// Set some responsive typographic values
+
+// line heights
+h1,
+h2,
+h3 { 
+	line-height: 1.2; 
+}
+
+body {
+	line-height: 1.5;
+	@include respond-to(phone) {
+		line-height: 1.2;
+		.non-responsive {
+			line-height: 1.5;
+		}
+	}
+}
+
+
+// font sizes
+h1 { 
+	font-size: $baseFontSize * 2.75;  // ~38px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * 2.75 * .8;
+		.non-responsive {
+			font-size: $baseFontSize * 2.75;
+		}
+	}
+}
+
+h2 { 
+	font-size: $baseFontSize * 2.25;  // ~32px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * 2.25 * .8;
+		.non-responsive {
+			font-size: $baseFontSize * 2.25;
+		}
+	}
+}
+
+h3 { 
+	font-size: $baseFontSize * 1.75;  // ~24px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * 1.75 * .8; 
+		.non-responsive {
+			font-size: $baseFontSize * 1.75;
+		}
+	}
+}
+
+h4 { 
+	font-size: $baseFontSize * 1.25;  // ~18px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * 1.25 * .8; 
+		.non-responsive {
+			font-size: $baseFontSize * 1.25;
+		}
+	}
+}
+
+h5 { 
+	font-size: $baseFontSize;  // ~14px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * .8;
+		.non-responsive {
+			font-size: $baseFontSize;
+		}
+	}
+}
+
+h6 { 
+	font-size: $baseFontSize * 0.85;  // ~12px
+	@include respond-to(phone) {
+		font-size: $baseFontSize * 0.85 * .8;
+		.non-responsive {
+			font-size: $baseFontSize * 0.85;
+		}
+	}
+}
+
+body {
+	font-size: $baseFontSize;
+	@include respond-to(phone) {
+		font-size: $baseFontSize * .8;
+		.non-responsive {
+			font-size: $baseFontSize;
+		}
+	}
+}

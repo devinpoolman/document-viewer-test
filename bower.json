@@ -1,0 +1,31 @@
+{
+  "name": "doctest",
+  "version": "0.0.0",
+  "ignore": [
+    ".cordova",
+    "merges",
+    "node_modules",
+    "platforms",
+    "plugins",
+    "app/bower_components"
+  ],
+  "dependencies": {
+    "appglu-angular": "appglu/appglu-angular",
+    "ace-slide-panels": "appglu/ace-slide-panels",
+    "ace-toolbar": "appglu/ace-toolbar",
+    "sass-bootstrap": "~2.3.2",
+    "angular" : "~1.2",
+    "angular-route" : "~1.2",
+    "angular-touch" : "~1.2",
+    "persistencejs": "~0.2",
+    "underscore": "~1.5",
+    "node-uuid": "~1.4",
+    "font-awesome": "~3.2",
+    "animate.css": "~2.1",
+    "angular-bootstrap": "~0.6.0",
+    "appglu-iscroll": "appglu/iscroll",
+    "es5-shim": "~2.0.8"
+  },
+  "devDependencies": {
+  }
+}
